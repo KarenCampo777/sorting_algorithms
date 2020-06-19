@@ -41,22 +41,22 @@ int partition(int *arr, int a, int b, size_t size)
 
 /**
  * quicksort - sorts an arrayusing the Quick sort algorithm
- * @array : the array to sort
+ * @array: the array to sort
  * @a: lower index
  * @b: higher index
  * @size : size of the array
  * Return: Nothing
  */
 
-void quicksort(int *arr, int a, int b, size_t size)
+void quicksort(int *array, int a, int b, size_t size)
 {
 	int piv;
 
 	if (a < b)
 	{
-		piv = partition(arr, a, b, size);
-		quicksort(arr, a, piv - 1, size);
-		quicksort(arr, piv + 1, b, size);
+		piv = partition(array, a, b, size);
+		quicksort(array, a, piv - 1, size);
+		quicksort(array, piv + 1, b, size);
 	}
 }
 
@@ -69,10 +69,10 @@ void quicksort(int *arr, int a, int b, size_t size)
  */
 
 
-void quick_sort(int *arr, size_t size)
+void quick_sort(int *array, size_t size)
 {
-	if (!arr || !size)
+	if (!array || !size)
 		return;
 
-	quicksort(arr, 0, size - 1, size);
+	quicksort(array, 0, size - 1, size);
 }
